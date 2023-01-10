@@ -1,0 +1,248 @@
+// antd css override
+
+.ant-drawer {
+  letter-spacing: -0.05em;
+
+  // CheckBox
+  .ant-checkbox {
+    & > .ant-checkbox-inner {
+      border-radius: $border-radius-sm;
+
+      &::after {
+        top: 47%;
+      }
+    }
+  }
+  // Button
+  .ant-btn {
+    // types
+    // primary
+    font-family: $font-family-title;
+    &.ant-btn-primary {
+      // disabled
+      &[disabled] {
+        background-color: rgba($primary-color, 0.25);
+        color: $white;
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: rgba($primary-color, 0.25);
+          color: $white;
+        }
+      }
+    }
+
+    // text
+    &.ant-btn-text {
+      background-color: rgba(#33a0ff, 0.05);
+      border-color: transparent;
+      color: $primary-color;
+
+      // disabled
+      &[disabled] {
+        opacity: 0.3;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $primary-color;
+          background-color: rgba(#33a0ff, 0.05);
+        }
+      }
+    }
+
+    // ghost
+    &.ant-btn-ghost {
+      border-color: $primary-color;
+      color: $primary-color;
+
+      // disabled
+      &[disabled] {
+        opacity: 0.3;
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-color: $primary-color;
+          color: $primary-color;
+        }
+      }
+    }
+
+    // link
+    &.ant-btn-link {
+      // disabled
+      &[disabled] {
+        color: rgba($primary-color, 0.3);
+      }
+    }
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-sm;
+    }
+
+    // size
+    &.ant-btn-lg {
+      padding-left: 31px;
+      padding-right: 31px;
+    }
+    &.ant-btn-sm {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    // default
+    &:not(.ant-btn-sm) {
+      &:not(.ant-btn-lg) {
+        padding-left: 23px;
+        padding-right: 23px;
+      }
+    }
+
+    // block
+    &.ant-btn-block {
+      &.ant-btn-lg {
+        height: 68px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+      }
+      // default
+      &:not(.ant-btn-sm) {
+        &:not(.ant-btn-lg) {
+          height: 60px;
+          font-size: $font-size-lg;
+          padding-top: 15px;
+          padding-bottom: 15px;
+          border-radius: $border-radius-base;
+        }
+      }
+    }
+  }
+
+  // Form
+  .ant-form {
+    &.ant-form-vertical {
+      .ant-form-item {
+        &-label {
+          padding: 0 0 4px;
+          label {
+            height: $form-item-label-height;
+          }
+        }
+
+        &-explain,
+        &-extra {
+          font-size: $font-size-sm;
+          color: $grey-3;
+          margin-top: 2px;
+        }
+
+        &.ant-form-item-has-feedback {
+          .ant-input-affix-wrapper {
+            .ant-input-suffix {
+              padding-right: 28px;
+            }
+          }
+
+          .ant-form-item-children-icon {
+            .anticon {
+              font-size: $font-size-lg;
+            }
+          }
+
+          // warning => error 로 사용
+          &.ant-form-item-has-warning {
+            &:not(.ant-input-disabled):not(.ant-input-borderless) {
+              .ant-input,
+              .ant-input-affix-wrapper {
+                border-color: $red-base;
+                &:hover {
+                  border-color: $red-base;
+                }
+              }
+            }
+
+            .ant-form-item-children-icon {
+              .anticon {
+                color: $red-base;
+              }
+            }
+          }
+
+          // success
+          &.ant-form-item-has-success {
+            &:not(.ant-input-disabled):not(.ant-input-borderless) {
+              .ant-input,
+              .ant-input-affix-wrapper {
+                border-color: $green-base;
+                &:hover {
+                  border-color: $green-base;
+                }
+              }
+            }
+            .ant-form-item-explain {
+              .ant-form-item-explain-error {
+                color: $green-base;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Input
+  .ant-input {
+    &-affix {
+      color: $grey-3;
+    }
+
+    &-suffix {
+      color: $grey-3;
+      .anticon {
+        &.ant-input-clear-icon {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &-affix-wrapper {
+      &-disabled {
+        .ant-input-suffix {
+          color: $grey-2;
+        }
+      }
+    }
+  }
+
+  // Typography Typography
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &.ant-typography {
+      font-family: $font-family-title;
+    }
+  }
+
+  // ant-tag
+  .ant-tag {
+    padding: $padding-xss $padding-xs;
+  }
+
+  // Table
+  .ant-table {
+    font-size: $font-size-base;
+
+    @media (max-width: $mobile) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// global-request-form modal
+.global-request-form {
+  .ant-modal-footer {
+    padding: 16px;
+  }
+}

@@ -1,0 +1,12 @@
+overwrite: true
+schema: 'http://apinestjs-env.eba-pxabpf9i.ap-northeast-2.elasticbeanstalk.com/api/graphql'
+documents:
+  - './graphql/fragments/*.ts'
+  - './graphql/mutations/*.ts'
+  - './graphql/queries/*.ts'
+generates:
+  ./graphql/scheme.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node
